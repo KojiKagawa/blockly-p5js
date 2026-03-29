@@ -1,0 +1,23 @@
+{
+  "name": "blockly-sample",
+  "version": "1.0.0",
+  "description": "A sample app using Blockly",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build",
+    "start": "vite --open"
+  },
+  "keywords": [
+    "blockly"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vite": "^7.1.0"
+  },
+  "dependencies": {
+    "blockly": "^12.0.0"
+  }
+}
