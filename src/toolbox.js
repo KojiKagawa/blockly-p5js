@@ -509,6 +509,123 @@ export const toolbox = {
     },
     {
       kind: 'category',
+      name: 'Drawing',
+      categorystyle: 'text_category',
+      contents: [
+        {
+          kind: 'block',
+          type: 'draw',
+        },
+        {
+          kind: 'block',
+          type: 'setup',
+        },
+        {
+          kind: 'block',
+          type: 'preload',
+        },
+        {
+          kind: 'block',
+          type: 'ellipse',
+          inputs: {
+            X: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 160,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 90,
+                },
+              },
+            },
+            WIDTH: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 180,
+                },
+              },
+            },
+            HEIGHT: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 120,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
+          type: 'line',
+          inputs: {
+            X1: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+            Y1: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 90,
+                },
+              },
+            },
+            X2: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 180,
+                },
+              },
+            },
+            Y2: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 120,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: 'block',
+          type: 'create_canvas',
+          inputs: {
+            WIDTH: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 320,
+                },
+              },
+            },
+            HEIGHT: {
+              shadow: {
+                type: 'math_number',
+                fields: {
+                  NUM: 180,
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+    {
+      kind: 'category',
       name: 'Lists',
       categorystyle: 'list_category',
       contents: [
