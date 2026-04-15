@@ -564,6 +564,60 @@ export const toolbox = {
         },
         {
           kind: "block",
+          type: "arc",
+          inputs: {
+            X: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 160,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 90,
+                },
+              },
+            },
+            WIDTH: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 180,
+                },
+              },
+            },
+            HEIGHT: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 120,
+                },
+              },
+            },
+            START_ANGLE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+            END_ANGLE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 135,
+                },
+              },
+            },
+          },
+        },        
+        {
+          kind: "block",
           type: "rect",
           inputs: {
             X: {

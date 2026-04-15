@@ -90,6 +90,21 @@ forBlockI['ellipse'] = function(block, generator) {
   return `p.${forBlock['ellipse'](block, generator)}`;
 }
 
+forBlock['arc'] = function(block, generator) {
+  const value_x = generator.valueToCode(block, 'X', Order.ATOMIC);
+  const value_y = generator.valueToCode(block, 'Y', Order.ATOMIC);
+  const value_width = generator.valueToCode(block, 'WIDTH', Order.ATOMIC);
+  const value_height = generator.valueToCode(block, 'HEIGHT', Order.ATOMIC);
+  const value_start = generator.valueToCode(block, 'START_ANGLE', Order.ATOMIC);
+  const value_stop = generator.valueToCode(block, 'END_ANGLE', Order.ATOMIC);
+  const code = `arc(${value_x}, ${value_y}, ${value_width}, ${value_height}, ${value_start}, ${value_stop});\n`;
+  return code;
+}
+
+forBlockI['arc'] = function(block, generator) {
+  return `p.${forBlock['arc'](block, generator)}`;
+}
+
 forBlock['rect'] = function(block, generator) {
   const value_x = generator.valueToCode(block, 'X', Order.ATOMIC);
   const value_y = generator.valueToCode(block, 'Y', Order.ATOMIC);

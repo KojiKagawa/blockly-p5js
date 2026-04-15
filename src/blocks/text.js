@@ -145,6 +145,53 @@ const ellipse = {
   "inputsInline": true
 };
 
+const arc = {
+  "type": "arc",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "arc( %1 , %2 , %3 , %4 , %5 , %6 ); %7",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "X",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "Y",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "WIDTH",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "HEIGHT",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "START_ANGLE",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "END_ANGLE",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
 const rect = {
   "type": "rect",
   "tooltip": "",
@@ -437,6 +484,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   preload,
   createCanvas,
   ellipse,
+  arc,
   rect,
   triangle,
   quad,
