@@ -6,15 +6,19 @@
 
 import * as Blockly from 'blockly';
 import {blocks} from './blocks/text';
-import {forBlock} from './generators/javascript';
+import {forBlock, forBlockI} from './generators/javascript';
 import {javascriptGenerator} from 'blockly/javascript';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
 
+import p5 from 'p5';
+
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);
 Object.assign(javascriptGenerator.forBlock, forBlock);
+const instanceModeGenerator = Object.create(javascriptGenerator);
+Object.assign(instanceModeGenerator.forBlock, forBlockI);
 
 // Set up UI elements and inject Blockly
 const codeDiv = document.getElementById('generatedCode').firstChild;
@@ -26,12 +30,24 @@ const ws = Blockly.inject(blocklyDiv, {toolbox});
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
-  const code = javascriptGenerator.workspaceToCode(ws);
-  codeDiv.innerText = code;
-
+//  const code = javascriptGenerator.workspaceToCode(ws);
+  const code0 = instanceModeGenerator.workspaceToCode(ws);
+  codeDiv.innerText = code0;
   outputDiv.innerHTML = '';
-
-  eval(code);
+  const code1 = `
+const sketch = (p) => {
+${code0}
+};
+const div = document.getElementById('outputPane');
+if (div) { 
+  for (const child of div.querySelectorAll('canvas')) {
+    child.remove();
+  }
+  new p5(sketch, div); 
+}
+`;
+  console.log(code1);
+  eval(code1);
 };
 
 // Load the initial state from storage and run the code.

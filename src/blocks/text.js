@@ -31,7 +31,7 @@ const draw = {
   "type": "draw",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "draw() %1 %2",
+  "message0": "draw() {...} %1 %2",
   "args0": [
     {
       "type": "input_dummy",
@@ -50,7 +50,7 @@ const setup = {
   "type": "setup",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "setup() %1 %2",
+  "message0": "setup() {...} %1 %2",
   "args0": [
     {
       "type": "input_dummy",
@@ -69,7 +69,7 @@ const preload = {
   "type": "preload",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "preload() %1 %2",
+  "message0": "preload() {...} %1 %2",
   "args0": [
     {
       "type": "input_dummy",
