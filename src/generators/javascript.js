@@ -90,6 +90,19 @@ forBlockI['ellipse'] = function(block, generator) {
   return `p.${forBlock['ellipse'](block, generator)}`;
 }
 
+forBlock['rect'] = function(block, generator) {
+  const value_x = generator.valueToCode(block, 'X', Order.ATOMIC);
+  const value_y = generator.valueToCode(block, 'Y', Order.ATOMIC);
+  const value_width = generator.valueToCode(block, 'WIDTH', Order.ATOMIC);
+  const value_height = generator.valueToCode(block, 'HEIGHT', Order.ATOMIC);
+  const code = `rect(${value_x}, ${value_y}, ${value_width}, ${value_height});\n`;
+  return code;
+}
+
+forBlockI['rect'] = function(block, generator) {
+  return `p.${forBlock['rect'](block, generator)}`;
+}
+
 forBlock['line'] = function(block, generator) {
   const value_x1 = generator.valueToCode(block, 'X1', Order.ATOMIC);
   const value_y1 = generator.valueToCode(block, 'Y1', Order.ATOMIC);
@@ -101,4 +114,94 @@ forBlock['line'] = function(block, generator) {
 
 forBlockI['line'] = function(block, generator) {
   return `p.${forBlock['line'](block, generator)}`;
+}
+
+forBlock['triangle'] = function(block, generator) {
+  const value_x1 = generator.valueToCode(block, 'X1', Order.ATOMIC);
+  const value_y1 = generator.valueToCode(block, 'Y1', Order.ATOMIC);  
+  const value_x2 = generator.valueToCode(block, 'X2', Order.ATOMIC);
+  const value_y2 = generator.valueToCode(block, 'Y2', Order.ATOMIC);
+  const value_x3 = generator.valueToCode(block, 'X3', Order.ATOMIC);
+  const value_y3 = generator.valueToCode(block, 'Y3', Order.ATOMIC);
+  const code = `triangle(${value_x1}, ${value_y1}, ${value_x2}, ${value_y2}, ${value_x3}, ${value_y3});\n`;
+  return code;
+};
+
+forBlockI['triangle'] = function(block, generator) {
+  return `p.${forBlock['triangle'](block, generator)}`;
+}
+
+forBlock['quad'] = function(block, generator) {
+  const value_x1 = generator.valueToCode(block, 'X1', Order.ATOMIC);
+  const value_y1 = generator.valueToCode(block, 'Y1', Order.ATOMIC);
+  const value_x2 = generator.valueToCode(block, 'X2', Order.ATOMIC);
+  const value_y2 = generator.valueToCode(block, 'Y2', Order.ATOMIC);
+  const value_x3 = generator.valueToCode(block, 'X3', Order.ATOMIC);
+  const value_y3 = generator.valueToCode(block, 'Y3', Order.ATOMIC);
+  const value_x4 = generator.valueToCode(block, 'X4', Order.ATOMIC);
+  const value_y4 = generator.valueToCode(block, 'Y4', Order.ATOMIC);
+  const code = `quad(${value_x1}, ${value_y1}, ${value_x2}, ${value_y2}, ${value_x3}, ${value_y3}, ${value_x4}, ${value_y4});\n`;
+  return code;
+}
+
+forBlockI['quad'] = function(block, generator) {
+  return `p.${forBlock['quad'](block, generator)}`;
+}
+
+forBlock['background'] = function(block, generator) {
+  const value_color = generator.valueToCode(block, 'COLOR', Order.ATOMIC);
+  const code = `background(${value_color});\n`;
+  return code;
+}
+
+forBlockI['background'] = function(block, generator) {
+  return `p.${forBlock['background'](block, generator)}`;
+}
+
+forBlock['stroke'] = function(block, generator) {
+  const value_color = generator.valueToCode(block, 'COLOR', Order.ATOMIC);
+  const code = `stroke(${value_color});\n`;
+  return code;
+}
+
+forBlockI['stroke'] = function(block, generator) {
+  return `p.${forBlock['stroke'](block, generator)}`;
+}
+
+forBlock['fill'] = function(block, generator) {
+  const value_color = generator.valueToCode(block, 'COLOR', Order.ATOMIC);
+  const code = `fill(${value_color});\n`;
+  return code;
+} 
+
+forBlockI['fill'] = function(block, generator) {
+  return `p.${forBlock['fill'](block, generator)}`;
+}
+
+forBlock['stroke_weight'] = function(block, generator) {
+  const value_width = generator.valueToCode(block, 'WIDTH', Order.ATOMIC);
+  const code = `strokeWeight(${value_width});\n`;
+  return code;
+}
+
+forBlockI['stroke_weight'] = function(block, generator) {
+  return `p.${forBlock['stroke_weight'](block, generator)}`;
+}
+
+forBlock['no_stroke'] = function(block, generator) {
+  const code = `noStroke();\n`;
+  return code;
+}
+
+forBlockI['no_stroke'] = function(block, generator) {
+  return `p.${forBlock['no_stroke'](block, generator)}`;
+}
+
+forBlock['no_fill'] = function(block, generator) {
+  const code = `noFill();\n`;
+  return code;
+} 
+
+forBlockI['no_fill'] = function(block, generator) {
+  return `p.${forBlock['no_fill'](block, generator)}`;
 }

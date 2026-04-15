@@ -88,20 +88,12 @@ const createCanvas = {
   "type": "create_canvas",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "createCanvas( %1 %2 , %3 %4 ); %5",
+  "message0": "createCanvas( %1 , %2 ); %3",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "WIDTH",
       "check": "Number"
-    },
-    {
-      "type": "input_dummy",
-      "name": "C"
     },
     {
       "type": "input_value",
@@ -123,20 +115,12 @@ const ellipse = {
   "type": "ellipse",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "ellipse( %1 %2 , %3 %4 , %5 %6 , %7 %8 ); %9",
+  "message0": "ellipse( %1 , %2 , %3 , %4 ); %5",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "X",
       "check": "Number"
-    },
-    {
-      "type": "input_dummy",
-      "name": "C1"
     },
     {
       "type": "input_value",
@@ -144,17 +128,46 @@ const ellipse = {
       "check": "Number"
     },
     {
-      "type": "input_dummy",
-      "name": "C2"
-    },
-    {
       "type": "input_value",
       "name": "WIDTH",
       "check": "Number"
     },
     {
+      "type": "input_value",
+      "name": "HEIGHT",
+      "check": "Number"
+    },
+    {
       "type": "input_dummy",
-      "name": "C3"
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const rect = {
+  "type": "rect",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "rect( %1 , %2 , %3 , %4 ); %5",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "X",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "Y",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "WIDTH",
+      "check": "Number"
     },
     {
       "type": "input_value",
@@ -225,7 +238,230 @@ const line = {
   "inputsInline": true
 };
 
-                    
+const triangle = {
+  "type": "triangle",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "triangle( %1 , %2 , %3 , %4 , %5 , %6 ); %7",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "X1"
+    },
+    {
+      "type": "input_value",
+      "name": "Y1"
+    },
+    {
+      "type": "input_value",
+      "name": "X2"
+    },
+    {
+      "type": "input_value",
+      "name": "Y2"
+    },
+    {
+      "type": "input_value",
+      "name": "X3"
+    },
+    {
+      "type": "input_value",
+      "name": "Y3"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const quad = {
+  "type": "quad",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "quad( %1 , %2 , %3 , %4 , %5 , %6 , %7 , %8 ); %9",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "X1"
+    },
+    {
+      "type": "input_value",
+      "name": "Y1"
+    },
+    {
+      "type": "input_value",
+      "name": "X2"
+    },
+    {
+      "type": "input_value",
+      "name": "Y2"
+    },
+    {
+      "type": "input_value",
+      "name": "X3"
+    },
+    {
+      "type": "input_value",
+      "name": "Y3"
+    },
+    {
+      "type": "input_value",
+      "name": "X4"
+    },
+    {
+      "type": "input_value",
+      "name": "Y4"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const background = {
+  "type": "background",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "background( %1 %2 ); %3",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    },
+    {
+      "type": "input_value",
+      "name": "COLOR"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const stroke = {
+  "type": "stroke",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "stroke( %1 %2 ); %3",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    },
+    {
+      "type": "input_value",
+      "name": "COLOR"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const fill = {
+  "type": "fill",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "fill( %1 %2 ); %3",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    },
+    {
+      "type": "input_value",
+      "name": "COLOR"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const strokeWeight = {
+  "type": "stroke_weight",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "strokeWeight( %1 %2 ); %3",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    },
+    {
+      "type": "input_value",
+      "name": "WIDTH",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const noStroke = {
+  "type": "no_stroke",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "noStroke(); %1",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const noFill = {
+  "type": "no_fill",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "noFill(); %1",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
@@ -236,5 +472,14 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   preload,
   createCanvas,
   ellipse,
+  rect,
+  triangle,
+  quad,
   line,
+  background,
+  stroke,
+  fill,
+  strokeWeight,
+  noStroke,
+  noFill,
 ]);
