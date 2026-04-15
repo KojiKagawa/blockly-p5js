@@ -39,14 +39,16 @@ const sketch = (p) => {
 ${code0}
 };
 const div = document.getElementById('outputPane');
-if (div) { 
-  for (const child of div.querySelectorAll('canvas')) {
-    child.remove();
-  }
-  new p5(sketch, div); 
+if (div) {
+  // 排他制御をして、複数の p5 インスタンスが同時に生成されないようにする。
+  navigator.locks.request("canvas", async (lock) => {
+    for (const child of div.querySelectorAll('canvas')) {
+      child.remove();
+    }
+    new p5(sketch, div);
+  });
 }
 `;
-  console.log(code1);
   eval(code1);
 };
 
