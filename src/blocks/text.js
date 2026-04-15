@@ -42,7 +42,6 @@ const draw = {
       "name": "SS"
     }
   ],
-  "nextStatement": null,
   "colour": 285
 };
 
@@ -61,7 +60,6 @@ const setup = {
       "name": "SS"
     }
   ],
-  "nextStatement": null,
   "colour": 285
 };
 
@@ -80,7 +78,6 @@ const preload = {
       "name": "SS"
     }
   ],
-  "nextStatement": null,
   "colour": 285
 };
 
@@ -189,20 +186,12 @@ const line = {
   "type": "line",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "line( %1 %2 , %3 %4 , %5 %6 , %7 %8 ); %9",
+  "message0": "line( %1 , %2 , %3 , %4 ); %5",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "X1",
       "check": "Number"
-    },
-    {
-      "type": "input_dummy",
-      "name": "C1"
     },
     {
       "type": "input_value",
@@ -210,17 +199,9 @@ const line = {
       "check": "Number"
     },
     {
-      "type": "input_dummy",
-      "name": "C2"
-    },
-    {
       "type": "input_value",
       "name": "X2",
       "check": "Number"
-    },
-    {
-      "type": "input_dummy",
-      "name": "C3"
     },
     {
       "type": "input_value",
@@ -332,12 +313,8 @@ const background = {
   "type": "background",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "background( %1 %2 ); %3",
+  "message0": "background( %1 ); %2",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "COLOR"
@@ -357,12 +334,8 @@ const stroke = {
   "type": "stroke",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "stroke( %1 %2 ); %3",
+  "message0": "stroke( %1 ); %2",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "COLOR"
@@ -382,12 +355,8 @@ const fill = {
   "type": "fill",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "fill( %1 %2 ); %3",
+  "message0": "fill( %1 ); %2",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "COLOR"
@@ -407,12 +376,8 @@ const strokeWeight = {
   "type": "stroke_weight",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "strokeWeight( %1 %2 ); %3",
+  "message0": "strokeWeight( %1 ); %2",
   "args0": [
-    {
-      "type": "input_dummy",
-      "name": "L"
-    },
     {
       "type": "input_value",
       "name": "WIDTH",

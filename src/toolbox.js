@@ -602,6 +602,44 @@ export const toolbox = {
         },
         {
           kind: "block",
+          type: "line",
+          inputs: {
+            X1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+            Y1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+            X2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+            Y2: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 160,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
           type: "triangle",
           inputs: {
             X1: {
@@ -745,6 +783,70 @@ export const toolbox = {
               },
             },
           },
+        },
+        {
+          kind: "block",
+          type: "background",
+          inputs: {
+            COLOR: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "#ffcccc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "fill",
+          inputs: {
+            COLOR: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "#ccffcc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "stroke",
+          inputs: {
+            COLOR: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "#0000ff",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "stroke_weight",
+          inputs: {
+            WIDTH: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "no_stroke",
+        },
+        {
+          kind: "block",
+          type: "no_fill",
         },
       ],
     },
