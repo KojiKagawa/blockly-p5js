@@ -615,7 +615,7 @@ export const toolbox = {
               },
             },
           },
-        },        
+        },
         {
           kind: "block",
           type: "rect",
@@ -901,6 +901,158 @@ export const toolbox = {
         {
           kind: "block",
           type: "no_fill",
+        },
+        {
+          kind: "block",
+          type: "oklch",
+          inputs: {
+            L: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
+            C: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
+            H: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "hsl",
+          inputs: {
+            H: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 240,
+                },
+              },
+            },
+            S: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+            L: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "rgb",
+          inputs: {
+            R: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 255,
+                },
+              },
+            },
+            G: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 127,
+                },
+              },
+            },
+            B: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_size",
+          inputs: {
+            SIZE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 12,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_font",
+          inputs: {
+            FONT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Arial",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "p5_text",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "🐻🐼🐶🐱",
+                },
+              },
+            },
+            X: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 30,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "no_loop",
         },
       ],
     },

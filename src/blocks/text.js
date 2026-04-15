@@ -474,6 +474,207 @@ const noFill = {
   "colour": 165,
   "inputsInline": true
 };
+
+const noLoop = {
+  "type": "no_loop",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "noLoop(); %1",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "name": "L"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const oklch = {
+  "type": "oklch",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "`oklch( %1 %  %2 %  %3  /  %4 )` %5",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "L",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "C",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "H",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "A",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "output": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const rgb = {
+  "type": "rgb",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "`rgb( %1  %2  %3 / %4 )` %5",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "R",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "G",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "B",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "A",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "output": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const hsl = {
+  "type": "hsl",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "`hsl( %1 %2 %  %3 %  / %4 )` %5",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "H",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "S",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "L",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "A",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "output": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const textSize = {
+  "type": "text_size",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "textSize( %1 ); %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "SIZE",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const textFont = {
+  "type": "text_font",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "textFont( %1 ); %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "FONT"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+
+const p5Text = {
+  "type": "p5_text",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "text( %1 , %2 , %3 ); %4",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "TEXT",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "X",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "Y",
+      "check": "Number"
+    },
+    {
+      "type": "input_dummy",
+      "name": "R"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 165,
+  "inputsInline": true
+};
+                    
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
 // This file has no side effects!
@@ -495,4 +696,11 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   strokeWeight,
   noStroke,
   noFill,
+  noLoop,
+  oklch,
+  rgb,
+  hsl,
+  textSize,
+  textFont,
+  p5Text,
 ]);
