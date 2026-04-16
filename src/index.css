@@ -30,11 +30,56 @@ code {
   margin: 1rem;
 }
 
-#generatedCode {
-  height: 50%;
-  background-color: rgb(247, 240, 228);
+#tab {
+  display: flex;
+  gap: 1px;
+}
+
+#tab button {
+  flex: 1;
+  text-align: center;
+  padding: 0.25rem 0.25rem;
+  background-color: oklch(97.005% 0.02618 120);
+}
+
+#generatedCode, #generatedCodeI {
+  margin: 0;
+  height: 40%;
+  background-color: oklch(97.005% 0.02618 120);
 }
 
 #output {
-  height: 20%;
+  margin: 0;
+  height: 40%;
+  background-color: oklch(97.005% 0.02618 120);
+}
+
+#separator {
+  width: 99%;
+  border-top: thin solid #ccc;
+}
+
+/* 初期状態ではコンテンツを非表示にする */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+}
+
+/* activeクラスがついている時だけ表示 */
+.tab-content.active {
+  display: block;
+  border-width: 0 1px 1px 1px;
+}
+
+/* ボタンの見た目 */
+.tab-btn {
+  border-radius: 4px 4px 0 0;
+  border-width: 1px 1px 1px 1px;
+}
+
+.tab-btn.active {
+  font-weight: bold;
+  border-width: 1px 1px 0 1px;
 }

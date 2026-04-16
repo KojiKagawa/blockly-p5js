@@ -22,10 +22,12 @@ Blockly.setLocale(Ja);
 Blockly.common.defineBlocks(blocks);
 Object.assign(javascriptGenerator.forBlock, forBlock);
 const instanceModeGenerator = Object.create(javascriptGenerator);
+instanceModeGenerator.forBlock = Object.create(javascriptGenerator.forBlock);
 Object.assign(instanceModeGenerator.forBlock, forBlockI);
 
 // Set up UI elements and inject Blockly
 const codeDiv = document.getElementById('generatedCode').firstChild;
+const codeIDiv = document.getElementById('generatedCodeI').firstChild;
 const outputDiv = document.getElementById('output');
 const blocklyDiv = document.getElementById('blocklyDiv');
 const ws = Blockly.inject(blocklyDiv, {toolbox});
@@ -35,13 +37,14 @@ ws.addChangeListener(Blockly.Events.disableOrphans);
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
-//  const code = javascriptGenerator.workspaceToCode(ws);
-  const code0 = instanceModeGenerator.workspaceToCode(ws);
-  codeDiv.innerText = code0;
+  const code = javascriptGenerator.workspaceToCode(ws);
+  codeDiv.innerText = code;
+  const codeI = instanceModeGenerator.workspaceToCode(ws);
+  codeIDiv.innerText = codeI;
   outputDiv.innerHTML = '';
   const code1 = `
 const sketch = (p) => {
-${code0}
+${codeI}
 };
 const div = document.getElementById('outputPane');
 if (div) {
@@ -82,4 +85,24 @@ ws.addChangeListener((e) => {
     return;
   }
   runCode();
+});
+
+function openTab(evt, tabName) {
+  // すべてのコンテンツを非表示にする
+  const contents = document.querySelectorAll('.tab-content');
+  contents.forEach(content => content.classList.remove('active'));
+
+  // すべてのボタンからactiveクラスを消す
+  const buttons = document.querySelectorAll('.tab-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  // 指定されたタブを表示し、ボタンにactiveクラスをつける
+  document.getElementById(tabName).classList.add('active');
+  evt.currentTarget.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById("btn1").addEventListener("click", (e) => openTab(e, "generatedCode"));
+  document.getElementById("btn2").addEventListener("click", (e) => openTab(e, "generatedCodeI"));
+  document.getElementById("btn3").addEventListener("click", (e) => openTab(e, "output"));
 });

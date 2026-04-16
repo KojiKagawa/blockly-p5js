@@ -8,8 +8,13 @@
   <body>
     <div id="pageContainer">
       <div id="outputPane">
-        <pre id="generatedCode"><code></code></pre>
-        <div id="output"></div>
+        <div id="tab"><button id="btn1" class="tab-btn active">ソース<br/> (global mode)</button>
+                      <button id="btn2" class="tab-btn">ソース<br/> (instance mode<sup><a href='https://beta.p5js.org/reference/p5/p5/'>?</a></sup>)</button>
+                      <button id="btn3" class="tab-btn">出力</button></div>
+        <pre id="generatedCode" class="tab-content active"><code></code></pre>
+        <pre id="generatedCodeI" class="tab-content"><code></code></pre>
+        <pre id="output" class="tab-content"></pre>
+        <hr id="separator"/>
       </div>
       <div id="blocklyDiv"></div>
     </div>
