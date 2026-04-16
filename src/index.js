@@ -29,6 +29,7 @@ const codeDiv = document.getElementById('generatedCode').firstChild;
 const outputDiv = document.getElementById('output');
 const blocklyDiv = document.getElementById('blocklyDiv');
 const ws = Blockly.inject(blocklyDiv, {toolbox});
+ws.addChangeListener(Blockly.Events.disableOrphans);
 
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
