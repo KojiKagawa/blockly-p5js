@@ -59,6 +59,12 @@ code {
   border-top: thin solid #ccc;
 }
 
+#jsonContent {
+  max-height: 80vh;
+  border: thin solid #ccc;
+  overflow: auto;
+}
+
 /* 初期状態ではコンテンツを非表示にする */
 .tab-content {
   display: none;

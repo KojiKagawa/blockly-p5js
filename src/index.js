@@ -5,12 +5,12 @@
  */
 
 import * as Blockly from 'blockly';
-import {blocks} from './blocks/text';
-import {forBlock, forBlockI} from './generators/javascript';
-import {javascriptGenerator} from 'blockly/javascript';
+import { blocks } from './blocks/text';
+import { forBlock, forBlockI } from './generators/javascript';
+import { javascriptGenerator } from 'blockly/javascript';
 import * as Ja from 'blockly/msg/ja';
-import {save, load} from './serialization';
-import {toolbox} from './toolbox';
+import { save, load } from './serialization';
+import { toolbox } from './toolbox';
 import './index.css';
 
 import p5 from 'p5';
@@ -30,7 +30,8 @@ const codeDiv = document.getElementById('generatedCode').firstChild;
 const codeIDiv = document.getElementById('generatedCodeI').firstChild;
 const outputDiv = document.getElementById('output');
 const blocklyDiv = document.getElementById('blocklyDiv');
-const ws = Blockly.inject(blocklyDiv, {toolbox});
+const ws = Blockly.inject(blocklyDiv, { toolbox });
+
 ws.addChangeListener(Blockly.Events.disableOrphans);
 
 // This function resets the code and output divs, shows the
@@ -87,6 +88,55 @@ ws.addChangeListener((e) => {
   runCode();
 });
 
+function removeIds(obj) {
+  if (obj && typeof obj === 'object') {
+    delete obj.id; // id属性を削除
+    for (var key in obj) {
+      if (typeof obj[key] === 'object') {
+        removeIds(obj[key]); // 子要素も再帰的に処理
+      }
+    }
+  }
+}
+
+const jsonDialog = document.getElementById('jsonDialog');
+const jsonContent = document.getElementById('jsonContent');
+document.getElementById('closeJsonDialog').addEventListener('click', () => {
+  jsonDialog.close();
+});
+
+// コンテキストメニューに JSON を表示する項目を追加する
+const jsonTemplate = {
+  id: 'showJson',
+  displayText: () => "JSON を表示する",
+  preconditionFn: (scope) => {
+    const node = scope.focusedNode;
+    if (node instanceof Blockly.BlockSvg 
+      || node instanceof Blockly.WorkspaceSvg ) {
+      return 'enabled';
+    }
+    return 'hidden';
+  },
+  callback: (scope) => {
+    const node = scope.focusedNode;
+    if (node instanceof Blockly.BlockSvg) {
+      const block = Blockly.serialization.blocks.save(node);
+      removeIds(block);
+      jsonContent.textContent = JSON.stringify(block, null, 2);
+      jsonDialog.showModal();
+      console.log(block);
+    } else if (node instanceof Blockly.WorkspaceSvg) {
+      const state = Blockly.serialization.workspaces.save(node);
+      removeIds(state);
+      jsonContent.textContent = JSON.stringify(state, null, 2);
+      jsonDialog.showModal();
+      console.log(state);
+    }
+  }
+};
+
+Blockly.ContextMenuRegistry.registry.register(jsonTemplate);
+
 function openTab(evt, tabName) {
   // すべてのコンテンツを非表示にする
   const contents = document.querySelectorAll('.tab-content');
@@ -101,8 +151,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.classList.add('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById("btn1").addEventListener("click", (e) => openTab(e, "generatedCode"));
-  document.getElementById("btn2").addEventListener("click", (e) => openTab(e, "generatedCodeI"));
-  document.getElementById("btn3").addEventListener("click", (e) => openTab(e, "output"));
-});
+document.getElementById("btn1").addEventListener("click", (e) => openTab(e, "generatedCode"));
+document.getElementById("btn2").addEventListener("click", (e) => openTab(e, "generatedCodeI"));
+document.getElementById("btn3").addEventListener("click", (e) => openTab(e, "output"));
