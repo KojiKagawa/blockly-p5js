@@ -8,11 +8,15 @@ import * as Blockly from 'blockly';
 import {blocks} from './blocks/text';
 import {forBlock, forBlockI} from './generators/javascript';
 import {javascriptGenerator} from 'blockly/javascript';
+import * as Ja from 'blockly/msg/ja';
 import {save, load} from './serialization';
 import {toolbox} from './toolbox';
 import './index.css';
 
 import p5 from 'p5';
+
+// Set Blockly messages to Japanese
+Blockly.setLocale(Ja);
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);

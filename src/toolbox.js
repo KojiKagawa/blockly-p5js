@@ -17,7 +17,7 @@ export const toolbox = {
   contents: [
     {
       kind: "category",
-      name: "Logic",
+      name: "分岐",
       categorystyle: "logic_category",
       contents: [
         {
@@ -52,7 +52,7 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Loops",
+      name: "繰返し",
       categorystyle: "loop_category",
       contents: [
         {
@@ -115,7 +115,7 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Math",
+      name: "数学",
       categorystyle: "math_category",
       contents: [
         {
@@ -321,7 +321,7 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Text",
+      name: "文字列",
       categorystyle: "text_category",
       contents: [
         {
@@ -509,7 +509,7 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Drawing",
+      name: "p5.js 関係",
       categorystyle: "text_category",
       contents: [
         {
@@ -1058,7 +1058,7 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Lists",
+      name: "配列",
       categorystyle: "list_category",
       contents: [
         {
@@ -1164,13 +1164,13 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "Variables",
+      name: "変数",
       categorystyle: "variable_category",
       custom: "VARIABLE",
     },
     {
       kind: "category",
-      name: "Functions",
+      name: "関数",
       categorystyle: "procedure_category",
       custom: "PROCEDURE",
     },
