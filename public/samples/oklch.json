@@ -1,0 +1,373 @@
+{
+    "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+            {
+                "type": "draw",
+                "x": 0,
+                "y": 112,
+                "inputs": {
+                    "SS": {
+                        "block": {
+                            "type": "background",
+                            "inputs": {
+                                "COLOR": {
+                                    "shadow": {
+                                        "type": "text",
+                                        "fields": {
+                                            "TEXT": "lightgray"
+                                        }
+                                    }
+                                }
+                            },
+                            "next": {
+                                "block": {
+                                    "type": "no_stroke",
+                                    "next": {
+                                        "block": {
+                                            "type": "controls_for",
+                                            "fields": {
+                                                "VAR": {}
+                                            },
+                                            "inputs": {
+                                                "FROM": {
+                                                    "shadow": {
+                                                        "type": "math_number",
+                                                        "fields": {
+                                                            "NUM": 0
+                                                        }
+                                                    }
+                                                },
+                                                "TO": {
+                                                    "shadow": {
+                                                        "type": "math_number",
+                                                        "fields": {
+                                                            "NUM": 170
+                                                        }
+                                                    }
+                                                },
+                                                "BY": {
+                                                    "shadow": {
+                                                        "type": "math_number",
+                                                        "fields": {
+                                                            "NUM": 10
+                                                        }
+                                                    }
+                                                },
+                                                "DO": {
+                                                    "block": {
+                                                        "type": "controls_for",
+                                                        "fields": {
+                                                            "VAR": {}
+                                                        },
+                                                        "inputs": {
+                                                            "FROM": {
+                                                                "shadow": {
+                                                                    "type": "math_number",
+                                                                    "fields": {
+                                                                        "NUM": 0
+                                                                    }
+                                                                }
+                                                            },
+                                                            "TO": {
+                                                                "shadow": {
+                                                                    "type": "math_number",
+                                                                    "fields": {
+                                                                        "NUM": 310
+                                                                    }
+                                                                }
+                                                            },
+                                                            "BY": {
+                                                                "shadow": {
+                                                                    "type": "math_number",
+                                                                    "fields": {
+                                                                        "NUM": 10
+                                                                    }
+                                                                }
+                                                            },
+                                                            "DO": {
+                                                                "block": {
+                                                                    "type": "fill",
+                                                                    "inputs": {
+                                                                        "COLOR": {
+                                                                            "shadow": {
+                                                                                "type": "text",
+                                                                                "fields": {
+                                                                                    "TEXT": "#ccffcc"
+                                                                                }
+                                                                            },
+                                                                            "block": {
+                                                                                "type": "oklch",
+                                                                                "inputs": {
+                                                                                    "L": {
+                                                                                        "shadow": {
+                                                                                            "type": "math_number",
+                                                                                            "fields": {
+                                                                                                "NUM": 90
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "C": {
+                                                                                        "shadow": {
+                                                                                            "type": "math_number",
+                                                                                            "fields": {
+                                                                                                "NUM": 50
+                                                                                            }
+                                                                                        },
+                                                                                        "block": {
+                                                                                            "type": "math_arithmetic",
+                                                                                            "fields": {
+                                                                                                "OP": "MINUS"
+                                                                                            },
+                                                                                            "inputs": {
+                                                                                                "A": {
+                                                                                                    "shadow": {
+                                                                                                        "type": "math_number",
+                                                                                                        "fields": {
+                                                                                                            "NUM": 100
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "B": {
+                                                                                                    "shadow": {
+                                                                                                        "type": "math_number",
+                                                                                                        "fields": {
+                                                                                                            "NUM": 1
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "block": {
+                                                                                                        "type": "math_arithmetic",
+                                                                                                        "fields": {
+                                                                                                            "OP": "DIVIDE"
+                                                                                                        },
+                                                                                                        "inputs": {
+                                                                                                            "A": {
+                                                                                                                "shadow": {
+                                                                                                                    "type": "math_number",
+                                                                                                                    "fields": {
+                                                                                                                        "NUM": 1
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                "block": {
+                                                                                                                    "type": "variables_get",
+                                                                                                                    "fields": {
+                                                                                                                        "VAR": {}
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "B": {
+                                                                                                                "shadow": {
+                                                                                                                    "type": "math_number",
+                                                                                                                    "fields": {
+                                                                                                                        "NUM": 3.2
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "H": {
+                                                                                        "shadow": {
+                                                                                            "type": "math_number",
+                                                                                            "fields": {
+                                                                                                "NUM": 0
+                                                                                            }
+                                                                                        },
+                                                                                        "block": {
+                                                                                            "type": "math_arithmetic",
+                                                                                            "fields": {
+                                                                                                "OP": "MULTIPLY"
+                                                                                            },
+                                                                                            "inputs": {
+                                                                                                "A": {
+                                                                                                    "shadow": {
+                                                                                                        "type": "math_number",
+                                                                                                        "fields": {
+                                                                                                            "NUM": 1
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "block": {
+                                                                                                        "type": "variables_get",
+                                                                                                        "fields": {
+                                                                                                            "VAR": {}
+                                                                                                        }
+                                                                                                    }
+                                                                                                },
+                                                                                                "B": {
+                                                                                                    "shadow": {
+                                                                                                        "type": "math_number",
+                                                                                                        "fields": {
+                                                                                                            "NUM": 2
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "next": {
+                                                                        "block": {
+                                                                            "type": "ellipse",
+                                                                            "inputs": {
+                                                                                "X": {
+                                                                                    "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "fields": {
+                                                                                            "NUM": 160
+                                                                                        }
+                                                                                    },
+                                                                                    "block": {
+                                                                                        "type": "math_arithmetic",
+                                                                                        "fields": {
+                                                                                            "OP": "ADD"
+                                                                                        },
+                                                                                        "inputs": {
+                                                                                            "A": {
+                                                                                                "shadow": {
+                                                                                                    "type": "math_number",
+                                                                                                    "fields": {
+                                                                                                        "NUM": 1
+                                                                                                    }
+                                                                                                },
+                                                                                                "block": {
+                                                                                                    "type": "variables_get",
+                                                                                                    "fields": {
+                                                                                                        "VAR": {}
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "B": {
+                                                                                                "shadow": {
+                                                                                                    "type": "math_number",
+                                                                                                    "fields": {
+                                                                                                        "NUM": 5
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "Y": {
+                                                                                    "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "fields": {
+                                                                                            "NUM": 90
+                                                                                        }
+                                                                                    },
+                                                                                    "block": {
+                                                                                        "type": "math_arithmetic",
+                                                                                        "fields": {
+                                                                                            "OP": "ADD"
+                                                                                        },
+                                                                                        "inputs": {
+                                                                                            "A": {
+                                                                                                "shadow": {
+                                                                                                    "type": "math_number",
+                                                                                                    "fields": {
+                                                                                                        "NUM": 1
+                                                                                                    }
+                                                                                                },
+                                                                                                "block": {
+                                                                                                    "type": "variables_get",
+                                                                                                    "fields": {
+                                                                                                        "VAR": {}
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "B": {
+                                                                                                "shadow": {
+                                                                                                    "type": "math_number",
+                                                                                                    "fields": {
+                                                                                                        "NUM": 5
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "WIDTH": {
+                                                                                    "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "fields": {
+                                                                                            "NUM": 8
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                "HEIGHT": {
+                                                                                    "shadow": {
+                                                                                        "type": "math_number",
+                                                                                        "fields": {
+                                                                                            "NUM": 8
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "type": "setup",
+                "x": 0,
+                "y": 0,
+                "inputs": {
+                    "SS": {
+                        "block": {
+                            "type": "create_canvas",
+                            "inputs": {
+                                "WIDTH": {
+                                    "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                            "NUM": 320
+                                        }
+                                    }
+                                },
+                                "HEIGHT": {
+                                    "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                            "NUM": 180
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "variables": [
+        {
+            "name": "i"
+        },
+        {
+            "name": "item"
+        },
+        {
+            "name": "j"
+        },
+        {
+            "name": "k"
+        }
+    ]
+}

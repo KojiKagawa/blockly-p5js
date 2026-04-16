@@ -62,7 +62,18 @@ if (div) {
 };
 
 // Load the initial state from storage and run the code.
-load(ws);
+if (!load(ws)) {
+    // If there was no saved state, create a default block.
+    const params = new URLSearchParams(window.location.search);
+    const sample = params.get('sample');
+    if (sample) {
+      fetch(sample).then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          Blockly.serialization.workspaces.load(json, ws);
+        });
+    }
+}
 runCode();
 
 // Every time the workspace changes state, save the changes to storage.
