@@ -235,7 +235,7 @@ forBlock['oklch'] = function (block, generator) {
   const value_c = generator.valueToCode(block, 'C', Order.NONE);
   const value_h = generator.valueToCode(block, 'H', Order.NONE);
   const value_a = generator.valueToCode(block, 'A', Order.NONE);
-  const code = value_a ? `\`oklch(${value_l}% ${value_c}% ${value_h} / ${value_a})\`` : `\`oklch(${value_l}% ${value_c}% ${value_h}\``;
+  const code = value_a ? `\`oklch(${value_l}% ${value_c}% ${value_h} / ${value_a})\`` : `\`oklch(${value_l}% ${value_c}% ${value_h})\``;
   return [code, Order.ATOMIC];
 }
 
@@ -244,7 +244,7 @@ forBlock['rgb'] = function (block, generator) {
   const value_g = generator.valueToCode(block, 'G', Order.NONE);
   const value_b = generator.valueToCode(block, 'B', Order.NONE);
   const value_a = generator.valueToCode(block, 'A', Order.NONE);
-  const code = value_a ? `\`rgb(${value_r} ${value_g} ${value_b} / ${value_a})\`` : `\`rgb(${value_r} ${value_g} ${value_b}\``;
+  const code = value_a ? `\`rgb(${value_r} ${value_g} ${value_b} / ${value_a})\`` : `\`rgb(${value_r} ${value_g} ${value_b})\``;
   return [code, Order.ATOMIC];
 }
 
@@ -253,7 +253,7 @@ forBlock['hsl'] = function (block, generator) {
   const value_s = generator.valueToCode(block, 'S', Order.NONE);
   const value_l = generator.valueToCode(block, 'L', Order.NONE);
   const value_a = generator.valueToCode(block, 'A', Order.NONE);
-  const code = value_a ? `\`hsl(${value_h} ${value_s}% ${value_l}% / ${value_a})\`` : `\`hsl(${value_h} ${value_s}% ${value_l}%\``;
+  const code = value_a ? `\`hsl(${value_h} ${value_s}% ${value_l}% / ${value_a})\`` : `\`hsl(${value_h} ${value_s}% ${value_l}%)\``;
   return [code, Order.ATOMIC];
 }
 
