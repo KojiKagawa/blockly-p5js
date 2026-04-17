@@ -11,12 +11,14 @@ import { javascriptGenerator } from "blockly/javascript";
 import * as Ja from "blockly/msg/ja";
 import { save, load } from "./serialization";
 import { toolbox } from "./toolbox";
+import { Msg } from "./msg";
 import "./index.css";
 
 import p5 from "p5";
 
 // Set Blockly messages to Japanese
 Blockly.setLocale(Ja);
+Object.assign(Blockly.Msg, Msg);
 
 // Register the blocks and generator with Blockly
 Blockly.common.defineBlocks(blocks);

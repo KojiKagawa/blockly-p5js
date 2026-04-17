@@ -558,7 +558,7 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "oklch",
+          type: "oklcha",
           inputs: {
             L: {
               shadow: {
@@ -584,11 +584,19 @@ export const toolbox = {
                 },
               },
             },
+            A: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.75,
+                },
+              },
+            },
           },
         },
         {
           kind: "block",
-          type: "hsl",
+          type: "hsla",
           inputs: {
             H: {
               shadow: {
@@ -614,11 +622,19 @@ export const toolbox = {
                 },
               },
             },
+            A: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.75,
+                },
+              },
+            },
           },
         },
         {
           kind: "block",
-          type: "rgb",
+          type: "rgba",
           inputs: {
             R: {
               shadow: {
@@ -641,6 +657,14 @@ export const toolbox = {
                 type: "math_number",
                 fields: {
                   NUM: 0,
+                },
+              },
+            },
+            A: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.75,
                 },
               },
             },
@@ -726,7 +750,7 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "math_trig",
+          type: "p5_trig",
           inputs: {
             NUM: {
               shadow: {
@@ -758,9 +782,9 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "math_round",
+          type: "p5_round",
           fields: {
-            OP: "ROUND",
+            NAME: "ROUND",
           },
           inputs: {
             NUM: {
@@ -834,9 +858,31 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "math_random_int",
+          type: "p5_atan2",
           inputs: {
-            FROM: {
+            X: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 4,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "p5_random",
+          inputs: {
+            ARG: {
               shadow: {
                 type: "math_number",
                 fields: {
@@ -844,7 +890,21 @@ export const toolbox = {
                 },
               },
             },
-            TO: {
+          },
+        },
+        {
+          kind: "block",
+          type: "p5_random2",
+          inputs: {
+            ARG1: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+            ARG2: {
               shadow: {
                 type: "math_number",
                 fields: {
@@ -856,25 +916,13 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "math_random_float",
-        },
-        {
-          kind: "block",
-          type: "math_atan2",
+          type: "p5_random_seed",
           inputs: {
-            X: {
+            SEED: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 1,
-                },
-              },
-            },
-            Y: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
+                  NUM: 999,
                 },
               },
             },
