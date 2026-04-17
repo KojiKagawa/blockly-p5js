@@ -26,7 +26,7 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "logic_compare",
+          type: "p5_compare",
         },
         {
           kind: "block",
@@ -736,13 +736,27 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "math_single",
+          type: "p5_single",
           inputs: {
             NUM: {
               shadow: {
                 type: "math_number",
                 fields: {
                   NUM: 9,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "p5_neg",
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3,
                 },
               },
             },
@@ -1123,10 +1137,6 @@ export const toolbox = {
       name: "リスト",
       categorystyle: "list_category",
       contents: [
-        {
-          kind: "block",
-          type: "lists_create_with",
-        },
         {
           kind: "block",
           type: "lists_create_with",

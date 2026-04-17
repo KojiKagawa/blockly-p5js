@@ -752,7 +752,7 @@ const p5RandomSeed = {
   ],
   previousStatement: null,
   nextStatement: null,
-  colour: 225,
+  colour: 231,
   inputsInline: true,
 };
 
@@ -776,7 +776,7 @@ const p5Atan2 = {
     },
   ],
   output: null,
-  colour: 225,
+  colour: 231,
   inputsInline: true,
 };
 
@@ -810,7 +810,7 @@ const p5Trig = {
     },
   ],
   output: null,
-  colour: 225,
+  colour: 231,
   inputsInline: true,
 };
 
@@ -835,6 +835,10 @@ const p5Round = {
         [
           "round",
           "ROUND"
+        ],
+        [
+          "fract",
+          "FRACT"
         ]
       ]
     },
@@ -848,9 +852,88 @@ const p5Round = {
     }
   ],
   "output": null,
-  "colour": 225,
+  "colour": 231,
   "inputsInline": true
 };
+
+const p5Single = {
+  type: "p5_single",
+  tooltip: "",
+  helpUrl: "",
+  message0: "%1 ( %2 ) %3",
+  args0: [
+    {
+      type: "field_dropdown",
+      name: "NAME",
+      options: [
+        ["sqrt", "SQRT"],
+        ["abs", "ABS"],
+        ["log", "LOG"],
+        ["exp", "EXP"],
+      ],
+    },
+    {
+      type: "input_value",
+      name: "NUM",
+    },
+    {
+      type: "input_dummy",
+      name: "R",
+    },
+  ],
+  output: null,
+  colour: 231,
+  inputsInline: true,
+};
+
+const p5Neg = {
+  "type": "p5_neg",
+  "tooltip": "",
+  "helpUrl": "",
+  "message0": "- %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "NUM",
+      "check": "Number"
+    }
+  ],
+  "output": null,
+  "colour": 231
+};
+
+const p5Compare = {
+  'type': 'p5_compare',
+  'message0': '%1 %2 %3',
+  'args0': [
+    {
+      'type': 'input_value',
+      'name': 'A',
+    },
+    {
+      'type': 'field_dropdown',
+      'name': 'OP',
+      'options': [
+        ['==', 'EQ'],
+        ['!=', 'NEQ'],
+        ['<', 'LT'],
+        ['<=', 'LTE'],
+        ['>', 'GT'],
+        ['>=', 'GTE'],
+      ],
+    },
+    {
+      'type': 'input_value',
+      'name': 'B',
+    },
+  ],
+  'inputsInline': true,
+  'output': 'Boolean',
+  'style': 'logic_blocks',
+  'helpUrl': '%{BKY_LOGIC_COMPARE_HELPURL}',
+  'extensions': ['logic_compare', 'logic_op_tooltip'],
+};
+
 
 // Create the block definitions for the JSON-only blocks.
 // This does not register their definitions with Blockly.
@@ -886,4 +969,7 @@ export const blocks = Blockly.common.createBlockDefinitionsFromJsonArray([
   p5Atan2,
   p5Trig,
   p5Round,
+  p5Single,
+  p5Neg,
+  p5Compare,
 ]);

@@ -289,7 +289,7 @@ forBlockI['p5_text'] = function (block, generator) {
   return `p.${forBlock['p5_text'](block, generator)}`;
 };
 
-forBlock['p5_random'] = function(block, generator) {
+forBlock['p5_random'] = function (block, generator) {
   const dropdown_name = block.getFieldValue('NAME');
   const value_arg = generator.valueToCode(block, 'ARG', Order.COMMA);
 
@@ -305,12 +305,12 @@ forBlock['p5_random'] = function(block, generator) {
   return [code, Order.FUNCTION_CALL];
 };
 
-forBlockI['p5_random'] = function(block, generator) {
+forBlockI['p5_random'] = function (block, generator) {
   const [code, order] = forBlock['p5_random'](block, generator);
   return [`p.${code}`, order];
 };
 
-forBlock['p5_random2'] = function(block, generator) {
+forBlock['p5_random2'] = function (block, generator) {
   const dropdown_name = block.getFieldValue('NAME');
   const value_arg1 = generator.valueToCode(block, 'ARG1', Order.COMMA);
   const value_arg2 = generator.valueToCode(block, 'ARG2', Order.COMMA);
@@ -327,22 +327,22 @@ forBlock['p5_random2'] = function(block, generator) {
   return [code, Order.FUNCTION_CALL];
 };
 
-forBlockI['p5_random2'] = function(block, generator) {
+forBlockI['p5_random2'] = function (block, generator) {
   const [code, order] = forBlock['p5_random2'](block, generator);
   return [`p.${code}`, order];
 };
 
-forBlock['p5_random_seed'] = function(block, generator) {
+forBlock['p5_random_seed'] = function (block, generator) {
   const value_seed = generator.valueToCode(block, 'SEED', Order.COMMA);
   const code = `randomSeed(${value_seed});\n`;
   return code;
 };
 
-forBlockI['p5_random_seed'] = function(block, generator) {
+forBlockI['p5_random_seed'] = function (block, generator) {
   return `p.${forBlock['p5_random_seed'](block, generator)}`;
 };
 
-forBlock['p5_atan2'] = function(block, generator) {
+forBlock['p5_atan2'] = function (block, generator) {
   const value_y = generator.valueToCode(block, 'Y', Order.COMMA);
   const value_x = generator.valueToCode(block, 'X', Order.COMMA);
   const code = `atan2(${value_y}, ${value_x})`;
@@ -350,12 +350,12 @@ forBlock['p5_atan2'] = function(block, generator) {
   return [code, Order.FUNCTION_CALL];
 };
 
-forBlockI['p5_atan2'] = function(block, generator) {
+forBlockI['p5_atan2'] = function (block, generator) {
   const [code, order] = forBlock['p5_atan2'](block, generator);
   return [`p.${code}`, order];
 };
 
-forBlock['p5_trig'] = function(block, generator) {
+forBlock['p5_trig'] = function (block, generator) {
   const dropdown_name = block.getFieldValue('NAME');
   const value_num = generator.valueToCode(block, 'NUM', Order.ATOMIC);
 
@@ -391,12 +391,12 @@ forBlock['p5_trig'] = function(block, generator) {
   return [code, Order.FUNCTION_CALL];
 };
 
-forBlockI['p5_trig'] = function(block, generator) {
+forBlockI['p5_trig'] = function (block, generator) {
   const [code, order] = forBlock['p5_trig'](block, generator);
   return [`p.${code}`, order];
 };
 
-forBlock['p5_round'] = function(block, generator) {
+forBlock['p5_round'] = function (block, generator) {
   const dropdown_name = block.getFieldValue('NAME');
   const value_num = generator.valueToCode(block, 'NUM', Order.ATOMIC);
   let name;
@@ -410,13 +410,76 @@ forBlock['p5_round'] = function(block, generator) {
     case 'FLOOR':
       name = 'floor';
       break;
+    case 'FRACT':
+      name = 'fract';
+      break;
   }
 
   const code = `${name}(${value_num})`;
   return [code, Order.FUNCTION_CALL];
 };
 
-forBlockI['p5_round'] = function(block, generator) {
+forBlockI['p5_round'] = function (block, generator) {
   const [code, order] = forBlock['p5_round'](block, generator);
   return [`p.${code}`, order];
+};
+
+forBlock['p5_single'] = function (block, generator) {
+  const dropdown_name = block.getFieldValue('NAME');
+  const value_num = generator.valueToCode(block, 'NUM', Order.ATOMIC);
+
+  let name;
+  switch (dropdown_name) {
+    case 'SQRT':
+      name = 'sqrt';
+      break;
+    case 'SQ':
+      name = 'sq';
+      break;
+    case 'ABS':
+      name = 'abs';
+      break;
+    case 'LOG':
+      name = 'log';
+      break;
+    case 'EXP':
+      name = 'exp';
+      break;
+  }
+  const code = `${name}(${value_num})`;
+  // TODO: Change Order.NONE to the correct operator precedence strength
+  return [code, Order.FUNCTION_CALL];
+};
+
+forBlockI['p5_single'] = function (block, generator) {
+  const [code, order] = forBlock['p5_single'](block, generator);
+  return [`p.${code}`, order];
+};
+
+forBlock['p5_neg'] = function (block, generator) {
+  let value_num = generator.valueToCode(block, 'NUM', Order.UNARY_NEGATION) || '0';
+  if (value_num[0] === '-') {
+    // If the number already has a negative sign, remove it to avoid --.
+    value_num = ` ${value_num}`; // Add a space to prevent it from being parsed as a decrement operator.;
+  }
+  const code = `-${value_num}`;
+  return [code, Order.UNARY_NEGATION];
+};
+
+forBlock['p5_compare'] = function (block, generator) {
+  const OPERATORS = {
+    'EQ': '==',
+    'NEQ': '!=',
+    'LT': '<',
+    'LTE': '<=',
+    'GT': '>',
+    'GTE': '>=',
+  };
+  const operator = OPERATORS[block.getFieldValue('OP')];
+  const order =
+    operator === '==' || operator === '!=' ? Order.EQUALITY : Order.RELATIONAL;
+  const argument0 = generator.valueToCode(block, 'A', order) || '0';
+  const argument1 = generator.valueToCode(block, 'B', order) || '0';
+  const code = argument0 + ' ' + operator + ' ' + argument1;
+  return [code, order];
 };
