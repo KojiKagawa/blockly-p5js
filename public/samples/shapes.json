@@ -1,0 +1,460 @@
+﻿
+
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "draw",
+        "x": 0,
+        "y": 102,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "background",
+              "inputs": {
+                "COLOR": {
+                  "shadow": {
+                    "type": "text",
+                    "fields": {
+                      "TEXT": "lightgray"
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "no_fill",
+                  "next": {
+                    "block": {
+                      "type": "stroke",
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "text",
+                            "fields": {
+                              "TEXT": "red"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "line",
+                          "inputs": {
+                            "X1": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 25
+                                }
+                              }
+                            },
+                            "Y1": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 25
+                                }
+                              }
+                            },
+                            "X2": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 125
+                                }
+                              }
+                            },
+                            "Y2": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 75
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "stroke",
+                              "inputs": {
+                                "COLOR": {
+                                  "shadow": {
+                                    "type": "text",
+                                    "fields": {
+                                      "TEXT": "green"
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "rect",
+                                  "inputs": {
+                                    "X": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 25
+                                        }
+                                      }
+                                    },
+                                    "Y": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 25
+                                        }
+                                      }
+                                    },
+                                    "WIDTH": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 100
+                                        }
+                                      }
+                                    },
+                                    "HEIGHT": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "fields": {
+                                          "NUM": 50
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "stroke",
+                                      "inputs": {
+                                        "COLOR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "fields": {
+                                              "TEXT": "blue"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "fill",
+                                          "inputs": {
+                                            "COLOR": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "fields": {
+                                                  "TEXT": "orange"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "ellipse",
+                                              "inputs": {
+                                                "X": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 200
+                                                    }
+                                                  }
+                                                },
+                                                "Y": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 50
+                                                    }
+                                                  }
+                                                },
+                                                "WIDTH": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 120
+                                                    }
+                                                  }
+                                                },
+                                                "HEIGHT": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 60
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "no_stroke",
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "fill",
+                                                      "inputs": {
+                                                        "COLOR": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "fields": {
+                                                              "TEXT": "cyan"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "triangle",
+                                                          "inputs": {
+                                                            "X1": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 50
+                                                                }
+                                                              }
+                                                            },
+                                                            "Y1": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 170
+                                                                }
+                                                              }
+                                                            },
+                                                            "X2": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 200
+                                                                }
+                                                              }
+                                                            },
+                                                            "Y2": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 170
+                                                                }
+                                                              }
+                                                            },
+                                                            "X3": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 100
+                                                                }
+                                                              }
+                                                            },
+                                                            "Y3": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 120
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "fill",
+                                                              "inputs": {
+                                                                "COLOR": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "fields": {
+                                                                      "TEXT": "magenta"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "triangle",
+                                                                  "inputs": {
+                                                                    "X1": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 75
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "Y1": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 160
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "X2": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 225
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "Y2": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 160
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "X3": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 125
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "Y3": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 110
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "next": {
+                                                                    "block": {
+                                                                      "type": "fill",
+                                                                      "inputs": {
+                                                                        "COLOR": {
+                                                                          "shadow": {
+                                                                            "type": "text",
+                                                                            "fields": {
+                                                                              "TEXT": "yellow"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "next": {
+                                                                        "block": {
+                                                                          "type": "triangle",
+                                                                          "inputs": {
+                                                                            "X1": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 100
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "Y1": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 150
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "X2": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 250
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "Y2": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 150
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "X3": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 150
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "Y3": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 100
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "setup",
+        "x": 0,
+        "y": 0,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "create_canvas",
+              "inputs": {
+                "WIDTH": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 320
+                    }
+                  }
+                },
+                "HEIGHT": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 180
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+  ]
+}

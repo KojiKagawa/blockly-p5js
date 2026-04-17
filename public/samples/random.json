@@ -1,0 +1,442 @@
+﻿
+
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "draw",
+        "x": 0,
+        "y": 102,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "text_size",
+              "inputs": {
+                "SIZE": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 18
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "variables_set",
+                  "fields": {
+                    "VAR": {
+                      "name": "chars"
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "lists_create_with",
+                        "inline": true,
+                        "extraState": {
+                          "itemCount": 7
+                        },
+                        "inputs": {
+                          "ADD0": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "か"
+                              }
+                            }
+                          },
+                          "ADD1": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "が"
+                              }
+                            }
+                          },
+                          "ADD2": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "わ"
+                              }
+                            }
+                          },
+                          "ADD3": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "だ"
+                              }
+                            }
+                          },
+                          "ADD4": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "い"
+                              }
+                            }
+                          },
+                          "ADD5": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "が"
+                              }
+                            }
+                          },
+                          "ADD6": {
+                            "block": {
+                              "type": "text",
+                              "fields": {
+                                "TEXT": "く"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "controls_for",
+                      "fields": {
+                        "VAR": {
+                          "name": "x"
+                        }
+                      },
+                      "inputs": {
+                        "FROM": {
+                          "shadow": {
+                            "type": "math_number",
+                            "fields": {
+                              "NUM": 0
+                            }
+                          }
+                        },
+                        "TO": {
+                          "shadow": {
+                            "type": "math_number",
+                            "fields": {
+                              "NUM": 300
+                            }
+                          }
+                        },
+                        "BY": {
+                          "shadow": {
+                            "type": "math_number",
+                            "fields": {
+                              "NUM": 20
+                            }
+                          }
+                        },
+                        "DO": {
+                          "block": {
+                            "type": "controls_for",
+                            "fields": {
+                              "VAR": {
+                                "name": "y"
+                              }
+                            },
+                            "inputs": {
+                              "FROM": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 0
+                                  }
+                                }
+                              },
+                              "TO": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 160
+                                  }
+                                }
+                              },
+                              "BY": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 20
+                                  }
+                                }
+                              },
+                              "DO": {
+                                "block": {
+                                  "type": "variables_set",
+                                  "fields": {
+                                    "VAR": {
+                                      "name": "h"
+                                    }
+                                  },
+                                  "inputs": {
+                                    "VALUE": {
+                                      "block": {
+                                        "type": "p5_random",
+                                        "fields": {
+                                          "NAME": "RANDOM"
+                                        },
+                                        "inputs": {
+                                          "ARG": {
+                                            "shadow": {
+                                              "type": "math_number",
+                                              "fields": {
+                                                "NUM": 360
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "fill",
+                                      "inputs": {
+                                        "COLOR": {
+                                          "shadow": {
+                                            "type": "text",
+                                            "fields": {
+                                              "TEXT": "#ccffcc"
+                                            }
+                                          },
+                                          "block": {
+                                            "type": "oklcha",
+                                            "inputs": {
+                                              "L": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "fields": {
+                                                    "NUM": 50
+                                                  }
+                                                }
+                                              },
+                                              "C": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "fields": {
+                                                    "NUM": 100
+                                                  }
+                                                }
+                                              },
+                                              "H": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "fields": {
+                                                    "NUM": 0
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "name": "h"
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "A": {
+                                                "shadow": {
+                                                  "type": "math_number",
+                                                  "fields": {
+                                                    "NUM": 1
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "variables_set",
+                                          "fields": {
+                                            "VAR": {
+                                              "name": "c"
+                                            }
+                                          },
+                                          "inputs": {
+                                            "VALUE": {
+                                              "block": {
+                                                "type": "p5_random",
+                                                "fields": {
+                                                  "NAME": "RANDOM"
+                                                },
+                                                "inputs": {
+                                                  "ARG": {
+                                                    "shadow": {
+                                                      "type": "math_number",
+                                                      "fields": {
+                                                        "NUM": 360
+                                                      }
+                                                    },
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "name": "chars"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "p5_text",
+                                              "inputs": {
+                                                "TEXT": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "fields": {
+                                                      "TEXT": "🐻🐼🐶🐱"
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "name": "c"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "X": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 50
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "name": "x"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "Y": {
+                                                  "shadow": {
+                                                    "type": "math_number",
+                                                    "fields": {
+                                                      "NUM": 30
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "math_arithmetic",
+                                                    "fields": {
+                                                      "OP": "ADD"
+                                                    },
+                                                    "inputs": {
+                                                      "A": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "fields": {
+                                                            "NUM": 1
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "variables_get",
+                                                          "fields": {
+                                                            "VAR": {
+                                                              "name": "y"
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "B": {
+                                                        "shadow": {
+                                                          "type": "math_number",
+                                                          "fields": {
+                                                            "NUM": 20
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "no_loop"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "setup",
+        "x": 0,
+        "y": 0,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "create_canvas",
+              "inputs": {
+                "WIDTH": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 320
+                    }
+                  }
+                },
+                "HEIGHT": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 180
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "chars"
+    },
+    {
+      "name": "x"
+    },
+    {
+      "name": "y"
+    },
+    {
+      "name": "h"
+    },
+    {
+      "name": "c"
+    }
+  ]
+}
+
