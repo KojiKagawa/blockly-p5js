@@ -50,8 +50,8 @@ const runCode = () => {
   codeDiv.innerText = codeD.replace(pattern, "");
   const codeI = instanceModeGenerator.workspaceToCode(ws);
   // INFINITE_LOOP_TRAP を削除して表示。実際に eval するコードには残したままにする。
-  codeIDiv.innerText = 
-`const sketch = (p) => {
+  codeIDiv.innerText =
+    `const sketch = (p) => {
 ${javascriptGenerator.prefixLines(codeI.replace(pattern, ""), javascriptGenerator.INDENT)}
 };
 new p5(sketch);
@@ -82,18 +82,22 @@ const sample = params.get("sample");
 let initJson = null;
 
 function loadSample() {
-  if (initJson) {
-    Blockly.serialization.workspaces.load(initJson, ws);
-    return;
+  try {
+    if (initJson) {
+      Blockly.serialization.workspaces.load(initJson, ws);
+      return;
+    }
+    if (!sample) return;
+    fetch(sample)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        initJson = json;
+        Blockly.serialization.workspaces.load(json, ws);
+      });
+  } catch (e) {
+    console.error("ブロックの読み込みに失敗しました:", e);
   }
-  if (!sample) return;
-  fetch(sample)
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      initJson = json;
-      Blockly.serialization.workspaces.load(json, ws);
-    });
 }
 // Load the initial state from storage and run the code.
 if (!load(ws, sample)) {
