@@ -1,0 +1,133 @@
+﻿
+
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "draw",
+        "x": 0,
+        "y": 112,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "stroke_weight",
+              "inputs": {
+                "WIDTH": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 2
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "stroke",
+                  "inputs": {
+                    "COLOR": {
+                      "shadow": {
+                        "type": "text",
+                        "fields": {
+                          "TEXT": "green"
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "fill",
+                      "inputs": {
+                        "COLOR": {
+                          "shadow": {
+                            "type": "text",
+                            "fields": {
+                              "TEXT": "orange"
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "ellipse",
+                          "inputs": {
+                            "X": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 140
+                                }
+                              }
+                            },
+                            "Y": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 70
+                                }
+                              }
+                            },
+                            "WIDTH": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 180
+                                }
+                              }
+                            },
+                            "HEIGHT": {
+                              "shadow": {
+                                "type": "math_number",
+                                "fields": {
+                                  "NUM": 110
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "setup",
+        "x": 0,
+        "y": 0,
+        "inputs": {
+          "SS": {
+            "block": {
+              "type": "create_canvas",
+              "inputs": {
+                "WIDTH": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 320
+                    }
+                  }
+                },
+                "HEIGHT": {
+                  "shadow": {
+                    "type": "math_number",
+                    "fields": {
+                      "NUM": 180
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "variables": [
+  ]
+}
+
