@@ -12,6 +12,7 @@ import * as Ja from "blockly/msg/ja";
 import { save, load } from "./serialization";
 import { toolbox } from "./toolbox";
 import { Msg } from "./msg";
+import { simple } from "./sample";
 import "./index.css";
 
 import p5 from "p5";
@@ -87,7 +88,10 @@ function loadSample() {
       Blockly.serialization.workspaces.load(initJson, ws);
       return;
     }
-    if (!sample) return;
+    if (!sample) {
+      initJson = simple;
+      Blockly.serialization.workspaces.load(initJson, ws);
+    }
     fetch(sample)
       .then((response) => response.json())
       .then((json) => {
