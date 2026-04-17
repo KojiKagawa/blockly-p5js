@@ -15,7 +15,7 @@ import { Msg } from "./msg";
 import { simple } from "./sample";
 import "./index.css";
 
-import p5 from "p5";
+import p5js from "p5";
 
 // Set Blockly messages to Japanese
 Blockly.setLocale(Ja);
@@ -55,7 +55,7 @@ const runCode = () => {
     `const sketch = (p) => {
 ${javascriptGenerator.prefixLines(codeI.replace(pattern, ""), javascriptGenerator.INDENT)}
 };
-new p5(sketch);
+new p5js(sketch);
 `;
   outputDiv.innerHTML = "";
   const code1 = `
@@ -69,7 +69,7 @@ if (div) {
     for (const child of div.querySelectorAll('canvas')) {
       child.remove();
     }
-    new p5(sketch, div);
+    new p5js(sketch, div);
   });
 }
 `;
@@ -279,4 +279,4 @@ const sketch0 = (p) => {
   }
 }
 
-new p5(sketch0 ,document.getElementById('outputPane'))
+new p5js(sketch0 ,document.getElementById('outputPane'))
