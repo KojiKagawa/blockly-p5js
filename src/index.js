@@ -5,7 +5,7 @@
  */
 
 import * as Blockly from "blockly";
-import { blocks } from "./blocks/text";
+import { blocks } from "./blocks/p5js";
 import { forBlock, forBlockI } from "./generators/javascript";
 import { javascriptGenerator } from "blockly/javascript";
 import * as Ja from "blockly/msg/ja";
