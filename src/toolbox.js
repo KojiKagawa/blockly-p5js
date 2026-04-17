@@ -115,414 +115,53 @@ export const toolbox = {
     },
     {
       kind: "category",
-      name: "数学",
-      categorystyle: "math_category",
+      name: "p5 構造",
+      categorystyle: "procedure_category",
       contents: [
-        {
-          kind: "block",
-          type: "math_number",
-          fields: {
-            NUM: 123,
-          },
-        },
-        {
-          kind: "block",
-          type: "math_arithmetic",
-          inputs: {
-            A: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-            B: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_single",
-          inputs: {
-            NUM: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 9,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_trig",
-          inputs: {
-            NUM: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 45,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_constant",
-        },
-        {
-          kind: "block",
-          type: "math_number_property",
-          inputs: {
-            NUMBER_TO_CHECK: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 0,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_round",
-          fields: {
-            OP: "ROUND",
-          },
-          inputs: {
-            NUM: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 3.1,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_on_list",
-          fields: {
-            OP: "SUM",
-          },
-        },
-        {
-          kind: "block",
-          type: "math_modulo",
-          inputs: {
-            DIVIDEND: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 64,
-                },
-              },
-            },
-            DIVISOR: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 10,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_constrain",
-          inputs: {
-            VALUE: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 50,
-                },
-              },
-            },
-            LOW: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-            HIGH: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 100,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_random_int",
-          inputs: {
-            FROM: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-            TO: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 100,
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "math_random_float",
-        },
-        {
-          kind: "block",
-          type: "math_atan2",
-          inputs: {
-            X: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-            Y: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: 1,
-                },
-              },
-            },
-          },
-        },
-      ],
-    },
-    {
-      kind: "category",
-      name: "文字列",
-      categorystyle: "text_category",
-      contents: [
-        {
-          kind: "block",
-          type: "text",
-        },
-        {
-          kind: "block",
-          type: "text_join",
-        },
-        {
-          kind: "block",
-          type: "text_append",
-          inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_length",
-          inputs: {
-            VALUE: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "abc",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_isEmpty",
-          inputs: {
-            VALUE: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_indexOf",
-          inputs: {
-            VALUE: {
-              block: {
-                type: "variables_get",
-              },
-            },
-            FIND: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "abc",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_charAt",
-          inputs: {
-            VALUE: {
-              block: {
-                type: "variables_get",
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_getSubstring",
-          inputs: {
-            STRING: {
-              block: {
-                type: "variables_get",
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_changeCase",
-          inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "abc",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_trim",
-          inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "abc",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_count",
-          inputs: {
-            SUB: {
-              shadow: {
-                type: "text",
-              },
-            },
-            TEXT: {
-              shadow: {
-                type: "text",
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_replace",
-          inputs: {
-            FROM: {
-              shadow: {
-                type: "text",
-              },
-            },
-            TO: {
-              shadow: {
-                type: "text",
-              },
-            },
-            TEXT: {
-              shadow: {
-                type: "text",
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "text_reverse",
-          inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "add_text",
-          inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "abc",
-                },
-              },
-            },
-          },
-        },
-      ],
-    },
-    {
-      kind: "category",
-      name: "p5.js 関係",
-      categorystyle: "text_category",
-      contents: [
-        {
-          kind: "block",
-          type: "draw",
-        },
         {
           kind: "block",
           type: "setup",
         },
         {
           kind: "block",
+          type: "draw",
+        },
+        {
+          kind: "block",
+          type: "no_loop",
+        },
+        {
+          kind: "block",
           type: "preload",
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "p5 形",
+      categorystyle: "math_category",
+      contents: [
+        {
+          kind: "block",
+          type: "create_canvas",
+          inputs: {
+            WIDTH: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 320,
+                },
+              },
+            },
+            HEIGHT: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 180,
+                },
+              },
+            },
+          },
         },
         {
           kind: "block",
@@ -818,26 +457,41 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "create_canvas",
+          type: "p5_text",
           inputs: {
-            WIDTH: {
+            TEXT: {
               shadow: {
-                type: "math_number",
+                type: "text",
                 fields: {
-                  NUM: 320,
+                  TEXT: "🐻🐼🐶🐱",
                 },
               },
             },
-            HEIGHT: {
+            X: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 180,
+                  NUM: 50,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 30,
                 },
               },
             },
           },
         },
+      ],
+    },
+    {
+      kind: "category",
+      name: "p5 色・字",
+      categorystyle: "colour_category",
+      contents: [
         {
           kind: "block",
           type: "background",
@@ -1020,31 +674,37 @@ export const toolbox = {
             },
           },
         },
+      ],
+    },
+    {
+      kind: "category",
+      name: "数学",
+      categorystyle: "math_category",
+      contents: [
         {
           kind: "block",
-          type: "p5_text",
+          type: "math_number",
+          fields: {
+            NUM: 123,
+          },
+        },
+        {
+          kind: "block",
+          type: "math_arithmetic",
           inputs: {
-            TEXT: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: "🐻🐼🐶🐱",
-                },
-              },
-            },
-            X: {
+            A: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 50,
+                  NUM: 1,
                 },
               },
             },
-            Y: {
+            B: {
               shadow: {
                 type: "math_number",
                 fields: {
-                  NUM: 30,
+                  NUM: 1,
                 },
               },
             },
@@ -1052,13 +712,367 @@ export const toolbox = {
         },
         {
           kind: "block",
-          type: "no_loop",
+          type: "math_single",
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 9,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_trig",
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 45,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_constant",
+        },
+        {
+          kind: "block",
+          type: "math_number_property",
+          inputs: {
+            NUMBER_TO_CHECK: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_round",
+          fields: {
+            OP: "ROUND",
+          },
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 3.1,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_on_list",
+          fields: {
+            OP: "SUM",
+          },
+        },
+        {
+          kind: "block",
+          type: "math_modulo",
+          inputs: {
+            DIVIDEND: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 64,
+                },
+              },
+            },
+            DIVISOR: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 10,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_constrain",
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 50,
+                },
+              },
+            },
+            LOW: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+            HIGH: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_random_int",
+          inputs: {
+            FROM: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+            TO: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 100,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "math_random_float",
+        },
+        {
+          kind: "block",
+          type: "math_atan2",
+          inputs: {
+            X: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+            Y: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+          },
         },
       ],
     },
     {
       kind: "category",
-      name: "配列",
+      name: "テキスト",
+      categorystyle: "text_category",
+      contents: [
+        {
+          kind: "block",
+          type: "text",
+        },
+        {
+          kind: "block",
+          type: "text_join",
+        },
+        {
+          kind: "block",
+          type: "text_append",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_length",
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "abc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_isEmpty",
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_indexOf",
+          inputs: {
+            VALUE: {
+              block: {
+                type: "variables_get",
+              },
+            },
+            FIND: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "abc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_charAt",
+          inputs: {
+            VALUE: {
+              block: {
+                type: "variables_get",
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_getSubstring",
+          inputs: {
+            STRING: {
+              block: {
+                type: "variables_get",
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_changeCase",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "abc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_trim",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "abc",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_count",
+          inputs: {
+            SUB: {
+              shadow: {
+                type: "text",
+              },
+            },
+            TEXT: {
+              shadow: {
+                type: "text",
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_replace",
+          inputs: {
+            FROM: {
+              shadow: {
+                type: "text",
+              },
+            },
+            TO: {
+              shadow: {
+                type: "text",
+              },
+            },
+            TEXT: {
+              shadow: {
+                type: "text",
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "text_reverse",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "add_text",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "abc",
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "リスト",
       categorystyle: "list_category",
       contents: [
         {
