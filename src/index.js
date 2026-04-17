@@ -37,7 +37,8 @@ const ws = Blockly.inject(blocklyDiv, { toolbox });
 ws.addChangeListener(Blockly.Events.disableOrphans);
 
 let __loopTrap = 0;
-javascriptGenerator.INFINITE_LOOP_TRAP = `if (__loopTrap++ >= 100000) throw new Error("無限ループの可能性を検知したため停止しました。");\n`;
+const infiniteLoopMessage = "無限ループの可能性を検知したため停止しました。";
+javascriptGenerator.INFINITE_LOOP_TRAP = `if (__loopTrap++ >= 500000) throw new Error("${infiniteLoopMessage}");\n`;
 
 const pattern = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g")
 
@@ -244,9 +245,10 @@ document
   .getElementById("btn3")
   .addEventListener("click", (e) => openTab(e, "output"));
 
+// eval で発生した例外は通常の catch ではキャッチできないので、unhandledrejection イベントで捕捉する。
 window.addEventListener("unhandledrejection", (event) => {
   console.log(event);
-  if (event.reason && event.reason.message && event.reason.message.includes("無限ループの可能性")) {
-    outputDiv.innerHTML = `<span style="color: red;">${event.reason.message}</span>`;
+  if (event.reason && event.reason.message && event.reason.message.includes(infiniteLoopMessage)) {
+    outputDiv.insertAdjacentHTML("beforeend", `<span style="color: red;">${event.reason.message}</span><br/>`);
   }
 });

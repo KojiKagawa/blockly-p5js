@@ -12,7 +12,7 @@ import * as Blockly from "blockly/core";
 // own custom blocks.
 const addText = {
   type: "add_text",
-  message0: "Add text %1",
+  message0: "%1 を出力する",
   args0: [
     {
       type: "input_value",
