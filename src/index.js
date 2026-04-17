@@ -36,14 +36,19 @@ const ws = Blockly.inject(blocklyDiv, { toolbox });
 
 ws.addChangeListener(Blockly.Events.disableOrphans);
 
+let __loopTrap = 0;
+javascriptGenerator.INFINITE_LOOP_TRAP = `if (__loopTrap++ >= 100000) throw new Error("無限ループの可能性を検知したため停止しました。");\n`;
+
+const pattern = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g")
+
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
   const code = javascriptGenerator.workspaceToCode(ws);
-  codeDiv.innerText = code;
+  codeDiv.innerText = code.replace(pattern, "");
   const codeI = instanceModeGenerator.workspaceToCode(ws);
-  codeIDiv.innerText = codeI;
+  codeIDiv.innerText = codeI.replace(pattern, "");
   outputDiv.innerHTML = "";
   const code1 = `
 const sketch = (p) => {
@@ -60,6 +65,8 @@ if (div) {
   });
 }
 `;
+
+  __loopTrap = 0;
   eval(code1);
 };
 
