@@ -15,7 +15,7 @@ import { Msg } from "./msg";
 import { simple } from "./sample";
 import "./index.css";
 
-import p5 from "p5";
+// import p5 from "p5";
 
 // Set Blockly messages to Japanese
 Blockly.setLocale(Ja);
@@ -266,17 +266,3 @@ window.addEventListener("unhandledrejection", (event) => {
     outputDiv.insertAdjacentHTML("beforeend", `<span style="color: red;">${event.reason.message}</span><br/>`);
   }
 });
-
-// 一度実行しておく
-const sketch0 = (p) => {
-  p.setup = () => {
-    p.createCanvas(320, 180);
-  };
-  p.draw = () => {
-    p.background(220);
-    p.fill(255, 0, 0);
-    p.ellipse(p.width / 2, p.height / 2, 50, 50);
-  }
-}
-
-new p5(sketch0 ,document.getElementById('outputPane'))
