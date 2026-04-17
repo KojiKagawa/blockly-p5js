@@ -49,11 +49,17 @@ const runCode = () => {
   const codeD = javascriptGenerator.workspaceToCode(ws);
   codeDiv.innerText = codeD.replace(pattern, "");
   const codeI = instanceModeGenerator.workspaceToCode(ws);
-  codeIDiv.innerText = codeI.replace(pattern, "");
+  // INFINITE_LOOP_TRAP を削除して表示。実際に eval するコードには残したままにする。
+  codeIDiv.innerText = 
+`const sketch = (p) => {
+${javascriptGenerator.prefixLines(codeI.replace(pattern, ""), javascriptGenerator.INDENT)}
+};
+new p5(sketch);
+`;
   outputDiv.innerHTML = "";
   const code1 = `
 const sketch = (p) => {
-${codeI}
+${javascriptGenerator.prefixLines(codeI, javascriptGenerator.INDENT)}
 };
 const div = document.getElementById('outputPane');
 if (div) {
