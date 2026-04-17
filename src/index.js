@@ -243,3 +243,10 @@ document
 document
   .getElementById("btn3")
   .addEventListener("click", (e) => openTab(e, "output"));
+
+window.addEventListener("unhandledrejection", (event) => {
+  console.log(event);
+  if (event.reason && event.reason.message && event.reason.message.includes("無限ループの可能性")) {
+    outputDiv.innerHTML = `<span style="color: red;">${event.reason.message}</span>`;
+  }
+});
