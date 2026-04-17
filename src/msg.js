@@ -7,4 +7,5 @@
   "MATH_POWER_SYMBOL": "**",
   "LOGIC_OPERATION_AND": "&&",
   "LOGIC_OPERATION_OR": "||",
+  "LISTS_GET_SUBLIST_START_FROM_START":  "# からのサブリストを取得します。",
 };
