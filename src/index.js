@@ -45,8 +45,8 @@ const pattern = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINIT
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
-  const code = javascriptGenerator.workspaceToCode(ws);
-  codeDiv.innerText = code.replace(pattern, "");
+  const codeD = javascriptGenerator.workspaceToCode(ws);
+  codeDiv.innerText = codeD.replace(pattern, "");
   const codeI = instanceModeGenerator.workspaceToCode(ws);
   codeIDiv.innerText = codeI.replace(pattern, "");
   outputDiv.innerHTML = "";
@@ -67,7 +67,7 @@ if (div) {
 `;
 
   __loopTrap = 0;
-  eval(code1);
+  eval(code1 + "\n//# sourceURL=generatedCode.js");
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -121,9 +121,9 @@ ws.addChangeListener((e) => {
 function replaceIdWithName(obj, workspace) {
   if (typeof obj !== "object" || obj === null) return;
 
-  for (let key in obj) {
-    if (key === "id" && typeof obj[key] === "string") {
-      delete obj[key];
+  for (let key0 in obj) {
+    if (key0 === "id" && typeof obj[key0] === "string") {
+      delete obj[key0];
     }
 
     // 変数参照フィールド（VAR など）を探す
@@ -137,7 +137,7 @@ function replaceIdWithName(obj, workspace) {
     }
 
     // 再帰的に子要素（inputs や blocks）を探索
-    replaceIdWithName(obj[key], workspace);
+    replaceIdWithName(obj[key0], workspace);
   }
 }
 
