@@ -37,9 +37,9 @@ const ws = Blockly.inject(blocklyDiv, { toolbox });
 
 ws.addChangeListener(Blockly.Events.disableOrphans);
 
-let __loopTrap = 0;
+window.__loopTrap = 0;
 const infiniteLoopMessage = "無限ループの可能性を検知したため停止しました。";
-javascriptGenerator.INFINITE_LOOP_TRAP = `if (__loopTrap++ >= 500000) throw new Error("${infiniteLoopMessage}");\n`;
+javascriptGenerator.INFINITE_LOOP_TRAP = `if (window.__loopTrap++ >= 500000) throw new Error("${infiniteLoopMessage}");\n`;
 
 const pattern = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g")
 
@@ -74,7 +74,7 @@ if (div) {
 }
 `;
 
-  __loopTrap = 0;
+  window.__loopTrap = 0;
   eval(code1 + "\n//# sourceURL=generatedCode.js");
 };
 
