@@ -48,3 +48,21 @@ You can disable, reconfigure, or replace any of these tools at any time, but the
 To run your app locally, run `npm run start` to run the development server.
 
 To deploy your app so that others can use it, run `npm run build` to run a production build. This outputs optimized assets in the `dist` directory. You can then host the contents of that directory on a web server of your choosing. If you're just getting started, try using [GitHub Pages](https://pages.github.com/).
+
+## Deploying to GitHub Pages
+
+This repository includes a GitHub Actions workflow that builds the app with Vite and publishes the `dist` directory to GitHub Pages.
+
+1. Push this repository to GitHub.
+2. In GitHub, open **Settings > Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Push to the `main` branch, or run the **Deploy to GitHub Pages** workflow manually from the **Actions** tab.
+
+After the workflow completes, the app will be available at:
+
+- `https://<your-user-or-org>.github.io/<repository-name>/`
+
+Notes:
+
+- The Vite `base` path is configured as a relative path, so the app works correctly under a repository subpath on GitHub Pages.
+- If your default branch is not `main`, update `.github/workflows/deploy-pages.yml` accordingly.
