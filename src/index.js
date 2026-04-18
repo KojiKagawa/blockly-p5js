@@ -40,20 +40,22 @@ ws.addChangeListener(Blockly.Events.disableOrphans);
 window.__loopTrap = 0;
 const infiniteLoopMessage = "無限ループの可能性を検知したため停止しました。";
 javascriptGenerator.INFINITE_LOOP_TRAP = `if (window.__loopTrap++ >= 500000) throw new Error("${infiniteLoopMessage}");\n`;
+javascriptGenerator.INFINITE_LOOP_TRAP_RESET = "window.__loopTrap = 0;";
 
-const pattern = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g")
+const pattern1 = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g");
+const pattern2 = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP_RESET), "g");
 
 // This function resets the code and output divs, shows the
 // generated code from the workspace, and evals the code.
 // In a real application, you probably shouldn't use `eval`.
 const runCode = () => {
   const codeD = javascriptGenerator.workspaceToCode(ws);
-  codeDiv.innerText = codeD.replace(pattern, "");
+  codeDiv.innerText = codeD.replace(pattern1, "").replace(pattern2, "");
   const codeI = instanceModeGenerator.workspaceToCode(ws);
   // INFINITE_LOOP_TRAP を削除して表示。実際に eval するコードには残したままにする。
   codeIDiv.innerText =
     `const sketch = (p) => {
-${javascriptGenerator.prefixLines(codeI.replace(pattern, ""), javascriptGenerator.INDENT)}
+${javascriptGenerator.prefixLines(codeI.replace(pattern1, "").replace(pattern2, ""), javascriptGenerator.INDENT)}
 };
 new p5(sketch);
 `;
@@ -95,7 +97,6 @@ function loadSample() {
     fetch(sample)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         initJson = json;
         Blockly.serialization.workspaces.load(json, ws);
       });

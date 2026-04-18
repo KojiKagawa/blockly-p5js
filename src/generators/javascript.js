@@ -32,37 +32,39 @@ forBlock['add_text'] = function (block, generator) {
 
 forBlock['draw'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'function draw() {\n' + statement_ss + '}\n';
+  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INFINITE_LOOP_TRAP_RESET + '\n' : '';
+  const code = `function draw() {\n${reset}${statement_ss}}\n`;
   return code;
 };
 
 forBlockI['draw'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'p.draw = () => {\n' + statement_ss + '};\n';
+  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INFINITE_LOOP_TRAP_RESET + '\n' : '';
+  const code = `p.draw = () => {\n${reset}${statement_ss}};\n`;
   return code;
 };
 
 forBlock['setup'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'function setup() {\n' + statement_ss + '}\n';
+  const code = `function setup() {\n${statement_ss}}\n`;
   return code;
 };
 
 forBlockI['setup'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'p.setup = () => {\n' + statement_ss + '};\n';
+  const code = `p.setup = () => {\n${statement_ss}};\n`;
   return code;
 };
 
 forBlock['preload'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'function preload() {\n' + statement_ss + '}\n';
+  const code = `function preload() {\n${statement_ss}}\n`;
   return code;
 };
 
 forBlockI['preload'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const code = 'p.preload = () => {\n' + statement_ss + '};\n';
+  const code = `p.preload = () => {\n${statement_ss}};\n`;
   return code;
 };
 
