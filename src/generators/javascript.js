@@ -32,14 +32,14 @@ forBlock['add_text'] = function (block, generator) {
 
 forBlock['draw'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INFINITE_LOOP_TRAP_RESET + '\n' : '';
+  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INDENT + generator.INFINITE_LOOP_TRAP_RESET : '';
   const code = `function draw() {\n${reset}${statement_ss}}\n`;
   return code;
 };
 
 forBlockI['draw'] = function (block, generator) {
   const statement_ss = generator.statementToCode(block, 'SS');
-  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INFINITE_LOOP_TRAP_RESET + '\n' : '';
+  const reset = generator.INFINITE_LOOP_TRAP_RESET ? generator.INDENT + generator.INFINITE_LOOP_TRAP_RESET : '';
   const code = `p.draw = () => {\n${reset}${statement_ss}};\n`;
   return code;
 };

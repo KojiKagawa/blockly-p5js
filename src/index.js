@@ -40,7 +40,7 @@ ws.addChangeListener(Blockly.Events.disableOrphans);
 window.__loopTrap = 0;
 const infiniteLoopMessage = "無限ループの可能性を検知したため停止しました。";
 javascriptGenerator.INFINITE_LOOP_TRAP = `if (window.__loopTrap++ >= 500000) throw new Error("${infiniteLoopMessage}");\n`;
-javascriptGenerator.INFINITE_LOOP_TRAP_RESET = "window.__loopTrap = 0;";
+javascriptGenerator.INFINITE_LOOP_TRAP_RESET = "window.__loopTrap = 0;\n";
 
 const pattern1 = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP), "g");
 const pattern2 = new RegExp("[ \\t]*" + RegExp.escape(javascriptGenerator.INFINITE_LOOP_TRAP_RESET), "g");
