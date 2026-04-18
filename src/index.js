@@ -55,8 +55,7 @@ const runCode = () => {
   // INFINITE_LOOP_TRAP を削除して表示。実際に eval するコードには残したままにする。
   codeIDiv.innerText =
     `const sketch = (p) => {
-${javascriptGenerator.prefixLines(codeI.replace(pattern1, "").replace(pattern2, ""), javascriptGenerator.INDENT)}
-};
+${javascriptGenerator.prefixLines(codeI.replace(pattern1, "").replace(pattern2, ""), javascriptGenerator.INDENT)}};
 new p5(sketch);
 `;
   outputDiv.innerHTML = "";
